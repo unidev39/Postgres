@@ -814,6 +814,30 @@ To                         Action      From
 5432/tcp (v6)              ALLOW       Anywhere (v6)
 */
 
+ -- Step 46 -->> On Node 1
+root@postgres:~# ufw allow from 192.168.142.13 to any port 22 proto tcp
+/*
+Rule added
+*/
+
+-- Step 47 -->> On Node 1
+root@postgres:~# ufw reload
+/*
+Firewall reloaded
+*/
+
+-- Step 48 -->> On Node 1
+root@postgres:~# ufw status
+/*
+Status: active
+
+To                         Action      From
+--                         ------      ----
+5432/tcp                   ALLOW       Anywhere
+22/tcp                     ALLOW       192.168.142.13
+5432/tcp (v6)              ALLOW       Anywhere (v6)
+*/
+ 
 -- Step 0 -->> On Node 1 (Tuning of Postgresql)
 root@postgres:~# systemctl stop postgresql
 
