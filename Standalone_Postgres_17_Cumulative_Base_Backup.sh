@@ -2,14 +2,14 @@
 
 ##########################################################################################################
 # Unidev39 its affiliates. All rights reserved.
-# File          : Standalone_Postrges_17_Cumulative_Base_Backup.sh
+# File          : Standalone_Postgres_17_Cumulative_Base_Backup.sh
 # Purpose       : To Take a Base Full and Cumulative Incremental Backup on Postgres 17
-# Usage         : ./Standalone_Postrges_17_Cumulative_Base_Backup.sh
+# Usage         : ./Standalone_Postgres_17_Cumulative_Base_Backup.sh
 # Created By    : Devesh Kumar Shrivastav
 # Created Date  : January 01, 2025
 # Revision      : 1.0
 ###########################################################################################################
-#########BOF This is part of the Standalone_Postrges_17_Cumulative_Base_Backup.sh##########################
+#########BOF This is part of the Standalone_Postgres_17_Cumulative_Base_Backup.sh##########################
 ##export PATH=$PATH:/usr/lib/postgresql/17/bin
 ##pg_combinebackup -o /backup/combine /backup/Bck_W02_Full_Jan_2025 /backup/Bck_W02_Inc_09_Jan_2025_1208
 
@@ -66,4 +66,4 @@ fi
 [ ! -f "${lv_manifest_dir}" ] && fn_full_backup || fn_inc_backup
 exit
 ###########################################################################################################
-#########EOF This is part of the Standalone_Postrges_17_Cumulative_Base_Backup.sh##########################
+#########EOF This is part of the Standalone_Postgres_17_Cumulative_Base_Backup.sh##########################
