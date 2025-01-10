@@ -262,16 +262,11 @@ root@postgres-dc-n1/postgres-dr-n1/postgres-dr-n2:~#  vi /banner.txt
 
 WARNING!!!!
 
-Welcome to the KSKL system.
+Welcome to the UNIDEV system.
 
 Authorized Access Only.
-Any unauthorized use may be monitored, recorded, and subject to legal action.
-By accessing you consent to such monitoring if unauthorized use is suspected.
-Violators may face criminal, civil, and/or administrative action.
 
-This system is the property of KSKL.
-
-
+This system is the property of UNIDEV.
 
 
 */
