@@ -75,6 +75,31 @@ SELECT
 FROM pg_stat_user_indexes
 ORDER BY idx_scan DESC;
 
+--7.1 Monitoring Index Performance
+--Before and after rebuilding, check index usage statistics:
+SELECT 
+    relname AS table_name, 
+    indexrelname AS index_name, 
+    idx_scan AS scans, 
+    pg_size_pretty(pg_relation_size(indexrelid)) AS index_size,
+    idx_tup_read, 
+    idx_tup_fetch
+FROM pg_stat_user_indexes
+WHERE relname = 'your_table_name';
+
+--7.2 Checking for Index Bloat (Before Rebuilding)
+--Identify bloated indexes that may benefit from a rebuild:
+SELECT 
+    schemaname, 
+    relname AS table_name, 
+    indexrelname AS index_name, 
+    pg_size_pretty(pg_relation_size(indexrelid)) AS index_size,
+    idx_scan AS scans, 
+    idx_tup_read, 
+    idx_tup_fetch
+FROM pg_stat_user_indexes
+WHERE idx_scan = 0;
+
 
 --8. Query for Gathers Status (Parallel Query Execution Status)
 SELECT 
